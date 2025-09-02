@@ -4,39 +4,35 @@ function calculate($data)
 {
     switch (true) {
     case is_bool($data):
-        throw new \Exeption("'{$data}' булево значение");
+        throw new \Exception('Булево значение');
         break;
     case is_float($data):
-        throw new \Exeption("'{$data}' число с плавающей запятой");
+        throw new \Exception('Число с плавающей запятой');
         break;
     case is_int($data):
-        throw new \Exeption("'{$data}' целое число");
+        throw new \Exception('Целое число');
         break;
     case is_string($data):
-        throw new \Exeption("'{$data}' строка");
+        throw new \Exception('Строка');
         break;
     case is_array($data):
-        throw new \Exeption("'{$data}' массив");
+        throw new \Exception('Массив');
         break;
-    case is_null($data):
-        throw new \Exeption("'{$data}' объект");
-        break;
-    default: throw new \Exeption('Тип не установлен');
+    default: throw new \Exception('Объект');
     }
 }
 
 //$data = true;
-$data = 3.14;
+//$data = 3.14;
 //$data = 5;
 //$data = 'string';
 //$data = [1, 2, 3];
-//$data = null;
 
 try
 {
     calculate($data);
 } 
-catch (\Exeption $e)
+catch (\Exception $e)
 {
     echo ($e->getMessage());
 }
