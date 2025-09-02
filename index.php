@@ -38,5 +38,5 @@ try
 } 
 catch (\Exeption $e)
 {
-    echo ($e->getVessage());
+    echo ($e->getMessage());
 }
